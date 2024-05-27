@@ -7,6 +7,8 @@ import { mockXHR } from './mock'
 import installElementPlus from './plugins/element'
 // 添加icon 图标
 import installIcons from '@/icons'
+// 路由拦截
+import './permission.js'
 // 模拟数据
 mockXHR()
 

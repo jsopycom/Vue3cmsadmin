@@ -1,7 +1,7 @@
 /**
  * @Author: jsopy
  * @Date: 2024-05-26 20:33:02
- * @LastEditTime: 2024-05-26 20:33:06
+ * @LastEditTime: 2024-05-27 21:32:05
  * @FilePath: /cmsadmin/src/mock/login/index.js
  * @Description:
  * @
@@ -20,7 +20,10 @@ module.exports = [
       // mock error
       return {
         code: 200,
-        message: '测试post接口'
+        message: '测试post接口',
+        data: {
+          token: 'Bearer 123456789'
+        }
       }
     }
   },

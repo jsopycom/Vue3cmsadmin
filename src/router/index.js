@@ -1,11 +1,11 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 const LoginPage = () => import('@/pages/Login.vue')
-
+const HomePage = () => import('@/pages/LayOut.vue')
 const publicroutes = [
   {
     path: '/',
     name: 'home',
-    component: LoginPage
+    component: HomePage
   },
   {
     path: '/login',
