@@ -1,7 +1,7 @@
 /**
  * @Author: jsopy
  * @Date: 2024-05-27 21:19:12
- * @LastEditTime: 2024-05-28 21:30:31
+ * @LastEditTime: 2024-05-29 07:05:43
  * @FilePath: /cmsadmin/src/store/modules/Login.js
  * @Description:登录模块
  * @
@@ -13,7 +13,7 @@ export default {
   namespaced: true,
   state: {
     token: '' || getItem(TOKEN),
-    userInfo: {}
+    userInfo: {} || getItem(USERINFO)
   },
   mutations: {
     updateToken(state, payload) {
