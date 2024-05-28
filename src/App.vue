@@ -13,8 +13,4 @@ import zhCn from 'element-plus/es/locale/lang/zh-cn'
 const locale = ref(zhCn)
 </script>
 
-<style lang="scss" scoped>
-#app {
-  height: 100%;
-}
-</style>
+<style lang="scss" scoped></style>

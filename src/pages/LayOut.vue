@@ -1,16 +1,56 @@
 <!--
  * @Author: jsopy
  * @Date: 2024-05-27 21:50:24
- * @LastEditTime: 2024-05-27 21:50:24
+ * @LastEditTime: 2024-05-28 20:42:12
  * @FilePath: /cmsadmin/src/pages/LayOut.vue
  * @Description: 骨架屏
  * 
 -->
 
 <template>
-  <div>骨架屏</div>
+  <div class="app-wrapper">
+    <!-- 左侧 menu -->
+    <sidebar id="guide-sidebar" class="sidebar-container" :style="{backgroundColor:variables.menuBg}"/>
+    <div class="main-container">
+      <div class="fixed-header">
+        <!-- 顶部的 navbar -->
+        <navbar />
+      </div>
+      <!-- 内容区 -->
+      <app-main />
+    </div>
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+import Sidebar from '@/components/layout/Sidebar/index.vue'
+import Navbar from '@/components/layout/Navbar/index.vue'
+import AppMain from '@/components/layout/AppMain/index.vue'
+import variables from '@/styles/variables.module.scss'
+console.log(variables)
+</script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import '~@/styles/mixin.module.scss';
+@import '~@/styles/variables.module.scss';
+
+.app-wrapper {
+  @include clearfix;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  width: calc(100% - #{$sideBarWidth});
+  transition: width #{$sideBarDuration};
+}
+
+.hideSidebar .fixed-header {
+  width: calc(100% - #{$hideSideBarWidth});
+}
+</style>
