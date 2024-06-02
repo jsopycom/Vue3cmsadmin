@@ -1,14 +1,14 @@
 <!--
  * @Author: jsopy
  * @Date: 2024-05-27 21:50:24
- * @LastEditTime: 2024-05-28 20:42:12
+ * @LastEditTime: 2024-06-02 20:00:48
  * @FilePath: /cmsadmin/src/pages/LayOut.vue
  * @Description: 骨架屏
  * 
 -->
 
 <template>
-  <div class="app-wrapper">
+  <div class="app-wrapper" :class="[$store.getters.sidebarOpened ? 'openSidebar' : 'hideSidebar']">
     <!-- 左侧 menu -->
     <sidebar id="guide-sidebar" class="sidebar-container" :style="{backgroundColor:variables.menuBg}"/>
     <div class="main-container">

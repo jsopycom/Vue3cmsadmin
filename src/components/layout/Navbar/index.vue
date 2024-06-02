@@ -1,14 +1,9 @@
-<!--
- * @Author: jsopy
- * @Date: 2024-05-28 19:50:59
- * @LastEditTime: 2024-06-01 21:32:54
- * @FilePath: /cmsadmin/src/components/layout/Navbar/index.vue
- * @Description: 头部导航栏
- * 
--->
-
 <template>
   <div class="navbar">
+    <!--收缩-->
+    <Hamburger class="hamburger-container"></Hamburger>
+    <!--收缩-->
+    <BreadList></BreadList>
     <div class="right-menu">
       <!--头像-->
       <el-dropdown class="avatar-container" trigger="click">
@@ -41,6 +36,8 @@
 </template>
 
 <script setup>
+import BreadList from '@/components/layout/BreadList/index.vue'
+import Hamburger from '@/components/layout/Hamburger/index.vue'
 import { useStore } from 'vuex'
 const store = useStore()
 const logout = () => {
@@ -56,6 +53,14 @@ const logout = () => {
   position: relative;
   background-color: #fff;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  .hamburger-container {
+    cursor: pointer;
+    float: left;
+    line-height: 50px;
+  }
+  .breadcrumb-container {
+    float: left;
+  }
   .right-menu {
     display: flex;
     align-items: center;

@@ -1,14 +1,21 @@
 <!--
  * @Author: jsopy
  * @Date: 2024-05-28 19:50:53
- * @LastEditTime: 2024-06-02 10:42:40
+ * @LastEditTime: 2024-06-02 20:20:21
  * @FilePath: /cmsadmin/src/components/layout/Sidebar/index.vue
  * @Description: 侧边栏
  * 
 -->
 <template>
   <div class="">
-    <h1>占位</h1>
+    <div class="logo-container">
+      <el-avatar
+        :size="logoHeight"
+        shape="square"
+        src="https://file.jsopy.com/DemoAll/Vue3Cms/superadmin.jpg"
+      ></el-avatar>
+      <h1 class="logo-title" v-if="$store.getters.sidebarOpened">adminCms</h1>
+    </div>
     <el-scrollbar>
       <sidebar-menu></sidebar-menu>
     </el-scrollbar>
@@ -17,7 +24,23 @@
 
 <script setup>
 import SidebarMenu from './SidebarMenu'
-import {} from 'vue'
+const logoHeight = 44
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.logo-container {
+  height: v-bind(logoHeight) + 'px';
+  padding: 10px 0 22px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .logo-title {
+    margin-left: 10px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 50px;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+}
+</style>
