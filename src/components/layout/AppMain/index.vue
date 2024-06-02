@@ -1,7 +1,7 @@
 <!--
  * @Author: jsopy
  * @Date: 2024-05-28 19:51:04
- * @LastEditTime: 2024-05-28 20:53:49
+ * @LastEditTime: 2024-06-02 12:04:22
  * @FilePath: /cmsadmin/src/components/layout/AppMain/index.vue
  * @Description: 
  * 
@@ -9,14 +9,11 @@
 
 <template>
   <div class="app-main">
-    {{ message }}
+    <router-view></router-view>
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-const message = ref('主页面')
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .app-main {

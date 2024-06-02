@@ -1,14 +1,15 @@
 /**
  * @Author: jsopy
  * @Date: 2024-05-27 21:19:12
- * @LastEditTime: 2024-05-29 07:05:43
+ * @LastEditTime: 2024-06-01 21:21:01
  * @FilePath: /cmsadmin/src/store/modules/Login.js
  * @Description:登录模块
  * @
  */
 import { getUserInfo, loginApiPost } from '@/api/Login/index'
-import { setItem, getItem } from '@/utils/common/storage'
+import { setItem, getItem, removeAllItem } from '@/utils/common/storage'
 import { TOKEN, USERINFO } from '@/config/index'
+import router from '@/router'
 export default {
   namespaced: true,
   state: {
@@ -43,6 +44,13 @@ export default {
       const result = await getUserInfo()
       commit('setUserInfo', result)
       return result
+    },
+    loginout({ commit }) {
+      commit('updateToken', '')
+      commit('setUserInfo', {})
+      removeAllItem()
+      // TODO 清理权限相关配置
+      router.push('/login')
     }
   }
 }

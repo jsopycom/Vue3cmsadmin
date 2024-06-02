@@ -1,3 +1,9 @@
 .el-avatar {
   --el-avatar-background-color: none !important;
 }
+
+.el-dropdown-menu__item:focus, .el-dropdown-menu__item:not(.is-disabled):hover
+{
+  background-color: #409EFF !important;
+  color: #fff !important;
+}
