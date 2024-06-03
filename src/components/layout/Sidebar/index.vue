@@ -1,7 +1,7 @@
 <!--
  * @Author: jsopy
  * @Date: 2024-05-28 19:50:53
- * @LastEditTime: 2024-06-02 20:20:21
+ * @LastEditTime: 2024-06-03 21:22:49
  * @FilePath: /cmsadmin/src/components/layout/Sidebar/index.vue
  * @Description: 侧边栏
  * 
@@ -14,7 +14,9 @@
         shape="square"
         src="https://file.jsopy.com/DemoAll/Vue3Cms/superadmin.jpg"
       ></el-avatar>
-      <h1 class="logo-title" v-if="$store.getters.sidebarOpened">adminCms</h1>
+      <h1 class="logo-title" v-if="$store.getters.sidebarOpened">
+        {{ $t('message.title') }}
+      </h1>
     </div>
     <el-scrollbar>
       <sidebar-menu></sidebar-menu>

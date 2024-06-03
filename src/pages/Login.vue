@@ -4,7 +4,12 @@
       <div class="FormWrap">
         <!-- <font-awesome-icon icon="eye" style="font-size: 32px" />
     <font-awesome-icon icon="eye-slash" style="font-size: 32px" /> -->
-        <div class="title">用户登陆</div>
+        <div class="title">
+          {{ $t('message.login.title') }}
+          <div style="float: right">
+            <LangSelect></LangSelect>
+          </div>
+        </div>
         <el-form
           :model="formdata"
           ref="loginFormRef"
@@ -49,7 +54,7 @@
           <!-- 协议 -->
           <el-form-item prop="agreement" class="formitem xieyi">
             <el-checkbox class="agreementcontent" v-model="formdata.agreement">
-              我同意此协议
+              {{ $t('message.agreement') }}
             </el-checkbox>
           </el-form-item>
           <!--TODO:提交按钮-->
@@ -59,7 +64,7 @@
             class="submitbutton"
             @click="submitchange"
           >
-            登陆
+            {{ $t('message.login.loginBtn') }}
           </el-button>
         </el-form>
       </div>
@@ -76,6 +81,7 @@ import {
 } from '@/utils/Login/tools.js'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
+import LangSelect from '@/components/layout/Langselect/index.vue'
 // NOTE:获取表单
 const loginFormRef = ref(null)
 // NOTE:Login 等待
@@ -158,11 +164,12 @@ const changetestType = (result) => {
       width: 100%;
       height: 100%;
       .title {
-        width: 100%;
+        width: 540px;
         font-size: 28px;
         color: white;
         letter-spacing: 4px;
         text-align: center;
+        margin: 0 auto;
       }
       .FormContent {
         .formitem {

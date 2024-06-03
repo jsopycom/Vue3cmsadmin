@@ -1,7 +1,7 @@
 /**
  * @Author: jsopy
  * @Date: 2024-05-27 21:27:41
- * @LastEditTime: 2024-06-02 13:37:01
+ * @LastEditTime: 2024-06-03 20:50:18
  * @FilePath: /cmsadmin/src/store/getters.js
  * @Description: getters文件
  * @
@@ -16,7 +16,8 @@ const getters = {
   },
   userInfo: (state) => state.Login.userInfo,
   cssVar: (state) => variables,
-  sidebarOpened: (state) => state.APP.sidebarOpened
+  sidebarOpened: (state) => state.APP.sidebarOpened,
+  language: (state) => state.APP.language
 }
 
 export default getters
