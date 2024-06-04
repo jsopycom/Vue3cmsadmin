@@ -5,6 +5,9 @@
     <!--收缩-->
     <BreadList></BreadList>
     <div class="right-menu">
+      <!--主题选择-->
+      <theme-picker class="right-menu-item hover-effect"></theme-picker>
+      <!--主题选择-->
       <!--头像-->
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
@@ -36,6 +39,7 @@
 </template>
 
 <script setup>
+import ThemePicker from '@/components/layout/ThemePicker/index'
 import BreadList from '@/components/layout/BreadList/index.vue'
 import Hamburger from '@/components/layout/Hamburger/index.vue'
 import { useStore } from 'vuex'
@@ -79,4 +83,7 @@ const logout = () => {
     }
   }
 }
+// .el-dropdown-menu__item--divided:before {
+//   margin: 0px 0px;
+// }
 </style>
