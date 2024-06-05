@@ -1,7 +1,7 @@
 /**
  * @Author: jsopy
  * @Date: 2024-05-27 21:27:41
- * @LastEditTime: 2024-06-05 07:24:37
+ * @LastEditTime: 2024-06-05 21:02:53
  * @FilePath: /cmsadmin/src/store/getters.js
  * @Description: getters文件
  * @
@@ -24,7 +24,8 @@ const getters = {
   },
   sidebarOpened: (state) => state.APP.sidebarOpened,
   language: (state) => state.APP.language,
-  mainColor: (state) => state.theme.mainColor
+  mainColor: (state) => state.theme.mainColor,
+  tagsViewList: (state) => state.APP.tagsViewList
 }
 
 export default getters

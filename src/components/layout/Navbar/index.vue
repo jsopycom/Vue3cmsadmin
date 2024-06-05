@@ -5,6 +5,13 @@
     <!--收缩-->
     <BreadList></BreadList>
     <div class="right-menu">
+      <!--国际化开始-->
+      <div class="langselect"><Langselect></Langselect></div>
+
+      <!--国际化结束-->
+      <!--全屏开始-->
+      <FullScreen></FullScreen>
+      <!--全屏结束-->
       <!--主题选择-->
       <theme-picker class="right-menu-item hover-effect"></theme-picker>
       <!--主题选择-->
@@ -42,6 +49,8 @@
 import ThemePicker from '@/components/layout/ThemePicker/index'
 import BreadList from '@/components/layout/BreadList/index.vue'
 import Hamburger from '@/components/layout/Hamburger/index.vue'
+import FullScreen from '@/components/layout/FullScreen/index.vue'
+import Langselect from '@/components/layout/Langselect/index.vue'
 import { useStore } from 'vuex'
 const store = useStore()
 const logout = () => {
@@ -70,6 +79,10 @@ const logout = () => {
     align-items: center;
     float: right;
     padding-right: 6px;
+    .langselect {
+      margin-right: 20px;
+      margin-top: 10px;
+    }
     ::v-deep .avatar-container {
       cursor: pointer;
       .avatar-wrapper {
